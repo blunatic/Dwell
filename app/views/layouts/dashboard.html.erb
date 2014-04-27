@@ -8,14 +8,7 @@
 </head>
 <body>
 
-    <div id="wrap">
-      <div align="center" id="header">
-        <div class="container">
-          <div class="row">
-            <div>
-             <%= render 'layouts/header'%>
-  <!-- -->
-               <div class="container"><!-- id vh-->
+  <%= yield %>
                 <!--sign up or sign in text -->
                 		<% if user_signed_in? %>
                 		  Signed in as <%= current_user.email %>, Not you?
@@ -28,17 +21,8 @@
                     <%= content_tag :div, msg, :id => "flash_#{name}" %>
                     <% end %>
                     <!-- body-->
-                <%= yield %>
-                <%= render 'layouts/footer' %>
-              </div>
-            </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
+              
+              
 
 </body>
 </html>
-
-
