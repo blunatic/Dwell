@@ -9,6 +9,9 @@ gem 'devise'
 # Use Bootstrap SASS
 gem 'bootstrap-sass'
 
+# Rails 12 factor
+gem 'rails_12factor', group: :production
+
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
 
