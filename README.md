@@ -1,7 +1,8 @@
 CSC 667 - Term Project
-Elvyn, Juan, Brendan
-
+==============
 Dwell
+Elvyn, Juan, Brendan
+----------------
 
 Site for helping roommates coordinate finances, and household matters.
 
