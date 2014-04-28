@@ -1,5 +1,4 @@
-<h1>Welcome back <%= current_user.email %>! </h1>
-    <head>
+<head>
         <meta charset="UTF-8">
         <title>Dwell | Home</title>
         <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
@@ -30,6 +29,7 @@
         <![endif]-->
     </head>
     <body class="skin-black">
+        
         <!-- header logo: style can be found in header.less -->
         <header class="header">
             
@@ -39,7 +39,9 @@
                 <a href="#" class="logo" style="color:orange">
                     dwell
                 </a>
+                
                 <div class="navbar-right">
+                    <p class="navbar-text" style="color:white">Welcome back <%= current_user.email %>!</p>
                     <ul class="nav navbar-nav">
                         <!-- Messages: style can be found in dropdown.less-->
                         <li class="dropdown messages-menu">
