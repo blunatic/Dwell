@@ -9,22 +9,22 @@
 <body>
 
   <%= yield %>
-                <!--sign up or sign in text -->
-                		<% if user_signed_in? %>
-                		  Signed in as <%= current_user.email %>, Not you?
-                      <%= link_to "Edit your account", edit_user_registration_path %>
-                      <div></div>
-                		  <%= link_to "Sign out", destroy_user_session_path, :method => :delete %>
-                		<% else %>
-                		  <%= link_to "Sign up", new_user_registration_path %> or <%= link_to "sign in", new_user_session_path %>
-                		<% end %>
+  <!--sign up or sign in text -->
+  <% if user_signed_in? %>
+  Signed in as <%= current_user.email %>, Not you?
+  <%= link_to "Edit your account", edit_user_registration_path %>
+  <div></div>
+  <%= link_to "Sign out", destroy_user_session_path, :method => :delete %>
+  <% else %>
+  <%= link_to "Sign up", new_user_registration_path %> or <%= link_to "sign in", new_user_session_path %>
+  <% end %>
 
-                    <% flash.each do |name, msg| %>
-                    <%= content_tag :div, msg, :id => "flash_#{name}" %>
-                    <% end %>
-                    <!-- body-->
-              
-              
+  <% flash.each do |name, msg| %>
+  <%= content_tag :div, msg, :id => "flash_#{name}" %>
+  <% end %>
+  <!-- body-->
+  
+  
 
 </body>
 </html>
