@@ -1,8 +1,24 @@
 Dwell::Application.routes.draw do
+
+
+
+
+  #get "contact_about_pages/about"
+  #get "contact_about_pages/contact"
+
+
   devise_for :users
   resources :dashboard
 
   root to: "home#index"
+
+
+  match 'about',       to: 'contact_about_pages#about',    via: 'get'
+  match 'contact',       to: 'contact_about_pages#contact',    via: 'get'
+
+  #match '/about'     to: 'contact_about_pages/about'   via: 'get'
+  #match '/contact'   to: 'contact_about_pages/contact'  via: 'get'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
