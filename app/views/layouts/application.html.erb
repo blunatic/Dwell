@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Dwell</title>
+  <title>Dwell | Home</title>
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%=yield :javascript_includes %>
@@ -17,14 +17,6 @@
              <%= render 'layouts/header'%>
   <!-- -->
                <div class="container"><!-- id vh-->
-                <!--sign up or sign in text -->
-                
-                		<% if user_signed_in? %>
-                		  Signed in as <%= current_user.email %>, Not you?
-                		  <%= link_to "Sign out", destroy_user_session_path, :method => :delete %>
-                		<% else %>
-                		  <%= link_to "Sign up", new_user_registration_path %> or <%= link_to "sign in", new_user_session_path %>
-                		<% end %>
 
                     <% flash.each do |name, msg| %>
                     <%= content_tag :div, msg, :id => "flash_#{name}" %>
