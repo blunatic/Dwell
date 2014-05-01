@@ -1,8 +1,10 @@
 Dwell::Application.routes.draw do
 
 
+
   root to: "home#index"
   resources :households
+
   resources :confessions
   devise_for :users
   resources :dashboard
