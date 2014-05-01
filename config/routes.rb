@@ -1,20 +1,13 @@
 Dwell::Application.routes.draw do
 
 
-
-
+  root to: "home#index"
+  resources :households
   resources :confessions
-
-  #get "contact_about_pages/about"
-  #get "contact_about_pages/contact"
-
-
   devise_for :users
   resources :dashboard
-  
-  root to: "home#index"
-
-
+  #get "contact_about_pages/about"
+  #get "contact_about_pages/contact"
   match 'about',       to: 'contact_about_pages#about',    via: 'get'
   match 'contact',       to: 'contact_about_pages#contact',    via: 'get'
 
