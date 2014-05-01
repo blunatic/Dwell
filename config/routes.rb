@@ -3,6 +3,8 @@ Dwell::Application.routes.draw do
 
 
 
+  resources :confessions
+
   #get "contact_about_pages/about"
   #get "contact_about_pages/contact"
 

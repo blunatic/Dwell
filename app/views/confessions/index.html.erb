@@ -1,0 +1,32 @@
+<h1>Share your confessions!</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Got anything to bitch about</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @confessions.each do |confession| %>
+      <tr>
+        <td><%= confession.content %></td>
+
+        <!--
+        <td><%= link_to 'Show', confession %></td>
+
+        <td><%= link_to 'Edit', edit_confession_path(confession) %></td>
+        <td><%= link_to 'Destroy', confession, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+-->
+
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Confession', new_confession_path %>

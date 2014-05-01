@@ -11,7 +11,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140430233609) do
+ActiveRecord::Schema.define(version: 20140501010218) do
+
+  create_table "confessions", force: true do |t|
+    t.string   "content"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "households", force: true do |t|
     t.string   "household_name"
