@@ -1,7 +1,9 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  household_name: MyString
+  name: MyString
+  password: MyString
 
 two:
-  household_name: MyString
+  name: MyString
+  password: MyString
