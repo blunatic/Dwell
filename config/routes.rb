@@ -6,8 +6,9 @@ Dwell::Application.routes.draw do
   resources :households
 
   resources :confessions
-  devise_for :users
+  devise_for :users, :controllers => {:registrations => "registerhousehold"}
   resources :dashboard
+  
   #get "contact_about_pages/about"
   #get "contact_about_pages/contact"
   match 'about',       to: 'contact_about_pages#about',    via: 'get'
