@@ -1,2 +1,0 @@
-class HouseholdController < DashboardController
-end

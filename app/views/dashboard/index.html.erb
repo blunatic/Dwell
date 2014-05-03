@@ -37,11 +37,12 @@
             <nav class="navbar navbar-fixed-top" role="navigation">
                 <!-- Sidebar toggle button-->
                 <a href="#" class="logo" style="color:orange">
-                    dwell
+                    DWELL
                 </a>
                 
                 <div class="navbar-right">
-                    <p class="navbar-text" style="color:white">Welcome back <%= current_user.email %>!</p>
+                    <p class="navbar-text" style="color:white">
+                        <%=current_user.household_id %> Household | Welcome back <%= current_user.first_name%>!</p>
                     <ul class="nav navbar-nav">
                         <!-- Messages: style can be found in dropdown.less-->
                         <li class="dropdown messages-menu">
@@ -130,10 +131,11 @@
                             <ul class="dropdown-menu">
                                 <!-- User image -->
                                 <li class="user-header bg-orange">
-                                    <img src="assets/avatar3.png" class="img-circle" alt="User Image" />
+
+                                   <%= gravatar_for current_user %>
                                     <p>
                                         <%= current_user.email %>
-                                        <small>Member since Nov. 2012</small>
+                                        <small>Member since <%= current_user.created_at.strftime("%B %Y")%></small>
                                     </p>
                                 </li>
                                 <!-- Menu Body -->

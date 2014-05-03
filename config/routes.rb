@@ -1,7 +1,6 @@
 Dwell::Application.routes.draw do
 
-
-
+  mount Ckeditor::Engine => '/ckeditor'
   root to: "home#index"
   resources :households
 
@@ -13,6 +12,7 @@ Dwell::Application.routes.draw do
   #get "contact_about_pages/contact"
   match 'about',       to: 'contact_about_pages#about',    via: 'get'
   match 'contact',       to: 'contact_about_pages#contact',    via: 'get'
+
 
   #match '/about'     to: 'contact_about_pages/about'   via: 'get'
   #match '/contact'   to: 'contact_about_pages/contact'  via: 'get'

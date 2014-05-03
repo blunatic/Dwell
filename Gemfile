@@ -6,6 +6,12 @@ gem 'rails', '4.0.3'
 # Use Devise for user authentication
 gem 'devise'
 
+# Gem for fixing Ckeditor
+gem 'ckeditor'
+
+# Another gem to tie in with ckeditor
+gem 'paperclip'
+
 # Use Bootstrap SASS
 gem 'bootstrap-sass'
 
