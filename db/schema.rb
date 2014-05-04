@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140503194045) do
+ActiveRecord::Schema.define(version: 20140504213649) do
 
   create_table "ckeditor_assets", force: true do |t|
     t.string   "data_file_name",               null: false
@@ -55,10 +55,11 @@ ActiveRecord::Schema.define(version: 20140503194045) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "household_id"
     t.string   "first_name"
     t.string   "last_name"
     t.string   "household_password"
+    t.string   "household_name"
+    t.integer  "household_id"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
