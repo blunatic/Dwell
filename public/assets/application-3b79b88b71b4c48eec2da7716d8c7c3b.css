@@ -9875,7 +9875,7 @@ Component: timeline
   padding: 0;
   width: 18px;
   height: 18px;
-  background: rgba(255, 255, 255, 0.7) url(images/minimal.png) no-repeat;
+  background: rgba(255, 255, 255, 0.7) url(minimal.png) no-repeat;
   border: none;
   cursor: pointer;
 }
@@ -38336,7 +38336,7 @@ Component: timeline
   padding: 0;
   width: 18px;
   height: 18px;
-  background: rgba(255, 255, 255, 0.7) url(images/minimal.png) no-repeat;
+  background: rgba(255, 255, 255, 0.7) url(minimal.png) no-repeat;
   border: none;
   cursor: pointer;
 }
