@@ -40,9 +40,7 @@
                     DWELL
                 </a>
                 
-                <div class="navbar-right">
-                    <p class="navbar-text" style="color:white">
-                        <%=current_user.household_name %> Household | Welcome back <%= current_user.first_name%>!</p>
+                <div class="navbar-right">                        
                     <ul class="nav navbar-nav">
                         <!-- Messages: style can be found in dropdown.less-->
                         <li class="dropdown messages-menu">
@@ -120,13 +118,39 @@
                                 <li class="footer"><a href="#">See All Messages</a></li>
                             </ul>
                         </li>
+                        <li class="dropdown user user-menu">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                <i class="glyphicon glyphicon-home" style = "color:orange"></i>
+                                <span style = "color:orange"><%=current_user.household_name %> Household<i class="caret" style = "color:orange"></i></span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <!-- User image -->
+                                <li class="user-header bg-orange">
+                                <br>
+
+                                <i class="glyphicon glyphicon-home" style = "font-size:60px"></i>
+                                    <p>
+                                        <%=current_user.household_name %> Household
+                                        <small>Established <%= current_user.household.created_at.strftime("%B %Y")%></small>
+                                    </p>
+                                </li>                                
+                                <!-- Menu Footer-->
+                                <li class="user-footer">
+                                    <div class="center">
+                                        <p>Number of members: <%= User.count(:household_name)%></p>
+
+                                    </div>
+                                    
+                                </li>
+                            </ul>
+                        </li>
                         
                         
                         <!-- User Account: style can be found in dropdown.less -->
                         <li class="dropdown user user-menu">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                                 <i class="glyphicon glyphicon-user" style = "color:orange"></i>
-                                <span style = "color:orange">Hello, <%= current_user.email %>!<i class="caret" style = "color:orange"></i></span>
+                                <span style = "color:orange"><%= current_user.email %><i class="caret" style = "color:orange"></i></span>
                             </a>
                             <ul class="dropdown-menu">
                                 <!-- User image -->
@@ -134,7 +158,7 @@
 
                                    <%= gravatar_for current_user %>
                                     <p>
-                                        <%= current_user.email %>
+                                        <%= current_user.first_name + " " + current_user.last_name %>
                                         <small>Member since <%= current_user.created_at.strftime("%B %Y")%></small>
                                     </p>
                                 </li>
