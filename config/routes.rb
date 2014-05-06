@@ -1,5 +1,7 @@
 Dwell::Application.routes.draw do
 
+  resources :events
+
   mount Ckeditor::Engine => '/ckeditor'
   root to: "home#index"
   resources :households
