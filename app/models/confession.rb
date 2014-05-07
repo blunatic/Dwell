@@ -1,5 +1,5 @@
 class Confession < ActiveRecord::Base
-	#belong to house hold 
+	belongs_to :household 
 	#attr_accessible :content, house_hold_id 
 
 	#attr_accessible :content, :user_id

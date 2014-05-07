@@ -26,6 +26,8 @@ class ConfessionsController < ApplicationController
   # POST /confessions.json
   def create
     @confession = Confession.new(confession_params)
+    @confession.household_id = current_user.household.id
+
 
     respond_to do |format|
       if @confession.save
