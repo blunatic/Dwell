@@ -250,3 +250,16 @@ p.copyright {
     float:none;
 }
 
+.centerBox {
+  display:inline-block;
+  text-align:center;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.4);
+    background: #101010;
+    margin: auto;
+    padding-bottom: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+
+}
+
+

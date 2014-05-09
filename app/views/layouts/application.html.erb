@@ -24,7 +24,12 @@
                     <%= content_tag :div, msg, :id => "flash_#{name}" %>
                     <% end %>
                     <!-- body-->
+
+
+<div class="centerBox" style="background-color: white">
+
                 <%= yield %>
+              </div>
                 <%= render 'layouts/footer' %>
               </div>
             </div>
