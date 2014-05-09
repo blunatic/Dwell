@@ -31,8 +31,8 @@ class ConfessionsController < ApplicationController
 
     respond_to do |format|
       if @confession.save
-        format.html { redirect_to @confession, notice: 'Confession was successfully created.' }
-        format.json { render action: 'show', status: :created, location: @confession }
+        format.html { redirect_to root_path}
+        format.js
       else
         format.html { render action: 'new' }
         format.json { render json: @confession.errors, status: :unprocessable_entity }
