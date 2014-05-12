@@ -7,23 +7,19 @@ class DashboardController < ApplicationController
   	end
   end
 
-  def make_payment
+  def make_payment_path
   	if !params[:access_token].nil?
 
-  		form_data = {
-  			"email" => @email_to,
-  			"amount" => @amount_to,
-  			"note" => @note_to,
-  			"access_token" => :access_token
-  		}
-  		url = "https://api.venmo.com/v1/payments"
-  		request = Net::HTTP::Post.new(url, form_data)
-  		
+  		uri = URI.parse("https://api.venmo.com/v1/payments")
+  		http = Net::HTTP.new(uri.host, uri.port)
+  		request = Net::HTTP::Post.new(uri.request_uri)
+  		request.set_form_data({"access_token" => params[:access_token], "email" => params[:payment_target],
+  		 "amount" => params[:payment_amount], "note" => params[:payment_note]} )
+
   		response = http.request(request)
-  		
   	end
   end
 
-  helper_method :make_payment
+  helper_method :make_payment_path
   
 end
