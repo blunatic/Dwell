@@ -14,7 +14,8 @@ Dwell::Application.routes.draw do
   #get "contact_about_pages/contact"
   match 'about',       to: 'contact_about_pages#about',    via: 'get'
   match 'contact',       to: 'contact_about_pages#contact',    via: 'get'
-  match 'make_payment_path', to: 'dashboard#make_payment_path', via: 'post'
+  post 'make_payment_path' => 'dashboard#make_payment_path'
+  match 'confirm_payment', to: 'dashboard#confirm_payment', via: 'get'
 
   #match '/about'     to: 'contact_about_pages/about'   via: 'get'
   #match '/contact'   to: 'contact_about_pages/contact'  via: 'get'

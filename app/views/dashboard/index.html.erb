@@ -185,21 +185,24 @@
 
 
                 <!-- Venmo box -->
-                        <div class="box box-warning">
-                            <div class="box-header">
-                              <h3 class="box-title">Pay Bill using Venmo Account</h3>
-                                <div id="payment_note_input">
-                                <input id="payment_note" type="text" class="form-control" required placeholder="add a note to your payment">
-                                </div>
-                                <div id="payment_target_input" >
-                                <input id="payment_target" type="text" class="form-control" required placeholder="pay an email address">
-                                </div>
-                                <div id="payment_amount_input">
-                                <input id="payment_amount" type="text" class="form-control" required placeholder="enter the payment amount! ">
-                                </div>
-                                </br>
-                            <button class="btn btn-danger" type="button" onClick= make_payment > Make payment</button>
-                        </div>
+                    <div class="box box-warning">
+                        <div class="box-header">
+                            <%= form_tag ('/make_payment_path') do %>
+                            <%= hidden_field_tag "access_token", @access_token %>
+                          <h3 class="box-title">Pay Bill using Venmo Account</h3>
+                            <div id="payment_note_input">
+                            <%= text_field_tag "payment_note", nil, class:"form-control", placeholder: "add a note to your payment" %>
+                            </div>
+                            <div id="payment_target_input">
+                                <%= text_field_tag "payment_target", nil, class:"form-control", placeholder: "pay an email address" %>
+                            </div>
+                            <div id="payment_amount_input">
+                                <%= text_field_tag "payment_amount", nil, class:"form-control", placeholder: "enter the payment amount!"%>
+                            </div>
+                            </br>
+                        <%= submit_tag "Make payment", class: "btn btn-danger" %>
+                        <% end %>
+                    </div>
                             
 
                         </section><!-- /.Left col -->
@@ -362,7 +365,7 @@
                                 </div><!-- /.box-body -->
 
                                 <div class="box-footer clearfix no-border">
-                                    <button class="btn btn-primary" ><a style="color:#fff" href="https://api.venmo.com/v1/oauth/authorize?client_id=1707&scope=make_payments%20access_profile">Click here to authenticate with Venmo and pay bills!</a></button>
+                                    <button class="btn btn-primary" ><a style="color:#fff" href="https://api.venmo.com/v1/oauth/authorize?client_id=1707&scope=make_payments%20access_profile&response_type=token">Click here to authenticate with Venmo and pay bills!</a></button>
                                     <%flash.each do |key, value| %>
                                     <div class="<%= flash_class(key) %>">
                                         <%= value %>
