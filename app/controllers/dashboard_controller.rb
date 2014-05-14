@@ -15,7 +15,6 @@ class DashboardController < ApplicationController
 
   def make_payment_path
   	if !params[:access_token].nil?
-
   		uri = URI.parse("https://api.venmo.com/v1/payments")
   		http = Net::HTTP.new(uri.host, uri.port)
       http.use_ssl = true
