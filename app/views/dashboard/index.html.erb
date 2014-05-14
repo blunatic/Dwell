@@ -248,7 +248,7 @@
     </div>
 
   <div class="field">
-    <input id="confession_content" name="confession[content]" type="text" size="40" />
+    <input id="confession_content" name="confession[content]" type="text" placeholder="Submit an anonymous message" size="40" />
   </div>
   <div class="actions">
     <input name="commit" type="submit" class="btn btn-warning"/>
@@ -278,6 +278,7 @@
                                 </div><!-- /.box-header -->
                                 <div class="box-body">
                                     <ul class="todo-list">
+                                        <% current_user.household.confessions.reverse_each do |confession| %>
                                         <li>
                                             <!-- drag handle -->
                                             <span class="handle">
@@ -287,7 +288,7 @@
                                             <!-- checkbox -->
                                             <input type="checkbox" value="" name=""/>                                            
                                             <!-- todo text -->
-                                            <span class="text">Design a nice theme</span>
+                                            <span class="text"><%=confession.content%></span>
                                             <!-- Emphasis label -->
                                             <small class="label label-danger"><i class="fa fa-clock-o"></i> 2 mins</small>
                                             <!-- General tools such as edit or delete-->
@@ -296,6 +297,7 @@
                                                 <i class="fa fa-trash-o"></i>
                                             </div>
                                         </li>
+                                        <% end %>
                                         <li>
                                             <span class="handle">
                                                 <i class="fa fa-ellipsis-v"></i>
