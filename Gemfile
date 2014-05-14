@@ -19,9 +19,7 @@ gem 'bootstrap-sass'
 gem 'rails_12factor', group: :production
 
 # Use postgresql as the database for Active Record
-group :development do
-  gem 'pg'
-end
+gem 'pg'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
