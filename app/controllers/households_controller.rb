@@ -1,6 +1,6 @@
 class HouseholdsController < ApplicationController
   before_action :set_household, only: [:show, :edit, :update, :destroy]
-  validates_confirmation_of :password
+  validates :password, presence: true
 
   # GET /households
   # GET /households.json
