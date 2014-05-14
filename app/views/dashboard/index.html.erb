@@ -32,6 +32,7 @@
         
         <!-- header logo: style can be found in header.less -->
         <header class="header">
+
             
             <!-- Header Navbar: style can be found in header.less -->
             <nav class="navbar navbar-fixed-top" role="navigation">
@@ -188,7 +189,7 @@
                     <div class="box box-warning">
                         <div class="box-header">
                             <%= form_tag ('/make_payment_path') do %>
-                            <%= hidden_field_tag "access_token", @access_token %>
+                            <%= hidden_field_tag "access_token", params[:access_token]%>
                           <h3 class="box-title">Pay Bill using Venmo Account</h3>
                             <div id="payment_note_input">
                             <%= text_field_tag "payment_note", nil, class:"form-control", placeholder: "add a note to your payment" %>
@@ -202,6 +203,21 @@
                             </br>
                         <%= submit_tag "Make payment", class: "btn btn-danger" %>
                         <% end %>
+                    </div>
+                    <div></div>
+
+                    <!-- Venmo Authentication Status box -->
+                    <div class="box box-warning">
+                        <div class= "box-header">
+                            <h3 class="box-title">Venmo Status</h3>
+                            <h4 class="box subtitle">
+                            <%flash.each do |key, value| %>
+                                    <div class="<%= flash_class(key) %>">
+                                        <%= value %>
+                                    </div>
+                            <% end %>
+                        </h4>
+                        </div>
                     </div>
                             
 
@@ -238,22 +254,22 @@
                                         <% end %>
 
                     
-                                </div><!-- /.chat -->
-                                <div class="box-footer">
-                                    <div class="input-group">
+                                    </div><!-- /.chat -->
+                                    <div class="box-footer">
+                                        <div class="input-group">
 
-<form accept-charset="UTF-8" action="/confessions" class="new_confession" id="new_confession" method="post">
-    <div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" />
-        <input name="authenticity_token" type="hidden" value="fOZTjbYr8LFxKHH7+ai0xEEMnFBIWX0M2oWF615VjQ4=" />
-    </div>
+                                            <form accept-charset="UTF-8" action="/confessions" class="new_confession" id="new_confession" method="post">
+                                                <div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" />
+                                                    <input name="authenticity_token" type="hidden" value="fOZTjbYr8LFxKHH7+ai0xEEMnFBIWX0M2oWF615VjQ4=" />
+                                                </div>
 
-  <div class="field">
-    <input id="confession_content" name="confession[content]" type="text" placeholder="Submit an anonymous message" size="40" />
-  </div>
-  <div class="actions">
-    <input name="commit" type="submit" class="btn btn-warning"/>
-  </div>
-</form>
+                                                <div class="field">
+                                                    <input id="confession_content" name="confession[content]" type="text" placeholder="Submit an anonymous message" size="40" />
+                                                </div>
+                                                <div class="actions">
+                                                    <input name="commit" type="submit" class="btn btn-warning"/>
+                                                </div>
+                                            </form>
                                         <!--<div class="input-group-btn">
                                             <button class="btn btn-warning"><i class="fa fa-plus"></i></button>
                                         </div>-->
@@ -368,11 +384,7 @@
 
                                 <div class="box-footer clearfix no-border">
                                     <button class="btn btn-primary" ><a style="color:#fff" href="https://api.venmo.com/v1/oauth/authorize?client_id=1707&scope=make_payments%20access_profile&response_type=token">Click here to authenticate with Venmo and pay bills!</a></button>
-                                    <%flash.each do |key, value| %>
-                                    <div class="<%= flash_class(key) %>">
-                                        <%= value %>
-                                    </div>
-                                    <% end %>
+                                    
                                     <button class="btn btn-default pull-right"><i class="fa fa-plus"></i> Create Bill</button>
                                 </div>
                             </div><!-- /.box -->
