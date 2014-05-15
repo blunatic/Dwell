@@ -1,11 +1,14 @@
 Dwell::Application.routes.draw do
 
+  resources :bills
+
   resources :events
 
   root to: "home#index"
   resources :households
 
   resources :confessions
+  resources :bills
   devise_for :users, :controllers => {:registrations => "registerhousehold"}
   resources :dashboard
   

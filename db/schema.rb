@@ -11,10 +11,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140507081610) do
+ActiveRecord::Schema.define(version: 20140514234059) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "bills", force: true do |t|
+    t.string   "content"
+    t.integer  "household_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "amount"
+    t.date     "due_date"
+  end
 
   create_table "ckeditor_assets", force: true do |t|
     t.string   "data_file_name",               null: false
